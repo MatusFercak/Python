@@ -1,0 +1,9 @@
+POUZITIE ARGUMENTOV A PREPINACOV V PRIKAZOVOM RIADKU
+pouzitie:
+[pri nespravnom zadani argumentov vypise 'chyba']
+
+python3 encryption <-s ='sifrovanie'/-d ='desifrovanie'> -p <kluc> <subor /.txt> 
+
+Vzorovy zapis:
+python3 encryption.py -s -p key text.txt
+
