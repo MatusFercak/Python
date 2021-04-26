@@ -41,21 +41,22 @@ class Zasielka:
 		self.__cislo_zasielky = arg
 
 	def __str__(self):
-		row = '-'*25 + '-\n'
-		vaha = f'Vaha: {self.__vaha} kg\n'
-		smerovacie_cislo = f'Smerovacie cislo: {self.__smerovacie_cislo}\n'
-		meno_odosielatela = f'Meno odosielatela: {self.__meno_odosielatela}\n'
-		meno_prijmatela = f'Meno prijmatela: {self.__meno_prijmatela}\n'
-		stav = 'Prevziate\n' if self.__stav == 'True' else 'Neprevziate\n'
-		cislo_zasielky = f'Cislo zasielky: {self.__cislo_zasielky}\n'
-		return row+vaha+smerovacie_cislo+meno_odosielatela+meno_prijmatela+'Stav: '+stav+cislo_zasielky+row
+		inf = '-'*25 + '-\n'
+		inf += f'Vaha: {self.__vaha} kg\n'
+		inf += f'Smerovacie cislo: {self.__smerovacie_cislo}\n'
+		inf += f'Meno odosielatela: {self.__meno_odosielatela}\n'
+		inf += f'Meno prijmatela: {self.__meno_prijmatela}\n'+'Stav: '
+		inf += 'Prevziate\n' if self.__stav == 'True' else 'Neprevziate\n'
+		inf += f'Cislo zasielky: {self.__cislo_zasielky}\n'
+		inf += '-'*25 + '-\n'
+		return inf
 
 
 class Posta(Zasielka):
 	zasielky = list()
 
 	def __init__(self, nazov, vaha, smerovacie_cislo, meno_odosielatela, meno_prijmatela, cislo_zasielky):
-		Zasielka.__init__(self, vaha, smerovacie_cislo, meno_odosielatela, meno_prijmatela, cislo_zasielky)
+		super().__init__(vaha, smerovacie_cislo, meno_odosielatela, meno_prijmatela, cislo_zasielky)
 		self.__pobocka_posty = nazov
 
 
@@ -174,7 +175,7 @@ if __name__ == '__main__':
 	zasielka_2 = Posta('KVP','25','04023','Matus Fercak','James Bond','1235')
 	zasielka_3 = Posta('KVP','15','04023','Matus Fercak','James Bond','3')
 
-	
+	print(zasielka_1)
 
 	# #print(zasielka_1.__str__())
 	# zasielka_1.set_Vaha('15')
@@ -193,7 +194,7 @@ if __name__ == '__main__':
 	#Posta.save_data('save.txt')
 	
 	# print(zasielka_3.__str__())
-
+	print(zasielka_1.get_vaha())
 
 	# zasielka_1.set_Vaha('40')
 	# zasielka_2.set_Vaha('350')
