@@ -9,5 +9,5 @@
 
 ### Kontaktujte ma 
 - mail: matusfercak@gmail.com
-- tel. č.: +4219 363 199
+- tel. č.: <a href="+4219 363 199">123-456-7890</a>
 
