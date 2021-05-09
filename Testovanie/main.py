@@ -1,22 +1,14 @@
-import unittest
-import tools
-from function import cvicenie_a
+def string_ends_with(string, ending):
+    return True if string[len(string) - len(ending):] == ending else False
 
-class FunctionsTestCasse(unittest.TestCase):
 
-    def test_prime(self):
-        self.assertEqual(cvicenie_a.is_prime(self, 13), True, "Shoud be True")
-        self.assertEqual(cvicenie_a.is_prime(self, 3), True, "Shoud be True")
-        self.assertEqual(cvicenie_a.is_prime(self, 14), False, "Shoud be False")
-        self.assertEqual(cvicenie_a.is_prime(self, 21), False, "Shoud be False")
 
-    def test_tool(self):
-        self.assertEqual(tools.is_prime(13), True, "Shuld be True")
-        self.assertEqual(tools.is_prime(3), True, "Shuld be True")
-        self.assertEqual(tools.is_prime(14), False, "Shuld be False")
-        self.assertEqual(tools.is_prime(21), False, "Shuld be False")
-        self.assertEqual(tools.is_prime(52), False, "Shuld be False")
 
+
+
+
+def main():
+	print(string_ends_with('ahoj', 'hoj'))
 
 if __name__ == '__main__':
-    unittest.main()
+	main()
