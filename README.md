@@ -1,5 +1,5 @@
 ### Tento repozitár slúži na prehľad mojich schopnosti su to projekty na ktorých pracujem vo voľnom čase 
-<br/
+<br/>
 <br/>
 Zoznam proektov:
 - [link](https://github.com/MatusFercak/Python/tree/main/Post)
