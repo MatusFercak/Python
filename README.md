@@ -1,9 +1,4 @@
-### Vitajte na mojom git účte  
-
-## Som študentom na Technickej univerzite v Košiciach 
-- 🦾🤖 Študujem na katedre kybernetiky inteligentne systémy 
-- 🔬 Venujem sa algoritmizacii a programovaniu 
-
+### Tento repozitár slúži na prehľad mojich schopnosti su to projekty na ktorých pracujem vo voľnom čase 
 <br/>
 <br/>
 
