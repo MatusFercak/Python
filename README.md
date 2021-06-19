@@ -3,6 +3,8 @@
 <br/>
 ##Zoznam proektov:
 <br/>
+- [link](https://github.com/MatusFercak/Python/tree/main/Post)
+- [link](https://github.com/MatusFercak/Python/tree/main/Post)
 -[Link](https://github.com/MatusFercak/Python/tree/main/Post)
 -[link](https://github.com/MatusFercak/Python/tree/main/Encryption)
 
