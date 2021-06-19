@@ -14,13 +14,13 @@ def test_string_ends_with(file_path):
 
 		lenght += 1
 
-	print('-'*30,f'\nPassed tests {passed} from {lenght}')
+	print('-'*30,f'\n[ Passed tests {passed} from {lenght} ]')
 
 		
 		
 
 def main():
-	test_string_ends_with('test_source/test_file.txt')
+	test_string_ends_with('test_source/test_for_String_ends_with.txt')
 
 if __name__ == '__main__':
 	main()

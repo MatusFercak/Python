@@ -31,8 +31,35 @@ def test_for_String_ends_with(file_write, file_read):
 	write_file.close()
 	read_file.close()
 
+def test_for_Move_zeros(file_write, num = 3000):
+	open(file_write, 'w').close()
+	my_file = open(file_write, 'w', encoding='UTF-8')
+
+	lst = list()
+
+	for a in range(num+1):
+		lst.clear()
+		for i in range(random.randint(1, 30)):
+			lst.append(random.randint(0, 5))
+
+		lst_zero = [x for x in lst if x != 0 or x is False]+[x for x in lst if x == 0 and not(x is False)]
+		my_file.write(f'{str(lst)} {str(lst_zero)}\n')
+	pass
+
+
 def main():
-	test_for_String_ends_with('test_source/test_file.txt','test_source/test_to_generete.txt')
+	test_for_String_ends_with('test_source/test_for_String_ends_with.txt','test_source/test_to_generete.txt')
+	test_for_Move_zeros('test_source/test_for_Move_zeros.txt')
 	
 if __name__ == '__main__':
-	main()
+	#main()
+	test_for_Move_zeros('test_source/test_for_Move_zeros.txt')
+
+
+
+
+
+
+
+
+
