@@ -11,7 +11,7 @@
 - mail: matusfercak@gmail.com
 - tel. č.: <a href="">+4219 363 199</a>
 
-- [link](Python/Post/)
+- [link](MatusFercak/Python/tree/main/Post)
 
 
 
