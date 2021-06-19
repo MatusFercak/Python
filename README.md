@@ -11,6 +11,8 @@
 - [Testovanie](https://github.com/MatusFercak/Python/tree/main/Testovanie)
 
 #### Kontakt
+- mail: matusfercak@gmail.com
+- tel. č.: <a href="">+4219 363 199</a>
 
 
 
