@@ -3,8 +3,8 @@
 <br/>
 ##Zoznam proektov:
 <br/>
-- [Postovy system balikov](https://github.com/MatusFercak/Python/tree/main/Post)
-- [Sifrovanie textu](https://github.com/MatusFercak/Python/tree/main/Encryption)
+-[Postovy system balikov](https://github.com/MatusFercak/Python/tree/main/Post)/
+-[Sifrovanie textu](https://github.com/MatusFercak/Python/tree/main/Encryption)/
 
 
 
