@@ -16,4 +16,13 @@
 
 #### Kontakt
 - mail: matusfercak@gmail.com
+<<<<<<< HEAD
 - tel. č.: <a href="">+4219 363 199</a>
+=======
+- tel. č.: <a href="">+4219 363 199</a>
+
+
+
+
+
+>>>>>>> 220dd576cc92b20734993c9648ceae3c36f0b3f8
