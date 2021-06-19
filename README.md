@@ -3,6 +3,7 @@
 
 ### Projekty
 <br/>
+
 - [Sifrovanie](https://github.com/MatusFercak/Python/tree/main/Encryption)
 - [Pravdepodobnost vyhry v pokri](https://github.com/MatusFercak/Python/tree/main/Poker-chances)
 - [Posta](https://github.com/MatusFercak/Python/tree/main/Post)
