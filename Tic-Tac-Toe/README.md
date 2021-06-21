@@ -1,5 +1,5 @@
-## Tic-Tac-Toe
+### Tic-Tac-Toe
 
-- PVP
+## PVP
 
-[]BUG_INPUT - cant handle string input on positions
+[ ]BUG_INPUT - cant handle string input on positions
