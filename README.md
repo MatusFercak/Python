@@ -7,7 +7,7 @@
 - [Sifrovanie](https://github.com/MatusFercak/Python/tree/main/Encryption)
 - [Pravdepodobnost vyhry v pokri](https://github.com/MatusFercak/Python/tree/main/Poker-chances)
 - [Posta](https://github.com/MatusFercak/Python/tree/main/Post)
-- [Registracia](https://github.com/MatusFercak/Python/tree/main/Registracia)
+- [Login](https://github.com/MatusFercak/Python/tree/main/Login)
 - [Testovanie](https://github.com/MatusFercak/Python/tree/main/Testovanie)
 - [Tic-Tac-Toe](https://github.com/MatusFercak/Python/tree/main/Tic-Tac-Toe)
 
