@@ -17,6 +17,6 @@
 
 #### Kontakt
 - mail: matusfercak@gmail.com
-- tel. č.: <a href="">+4219 363 199</a>
+- tel. č.: <a href="">+421948 363 199</a>
 
 
