@@ -2,4 +2,4 @@
 
 ## PVP
 
-[ ]BUG_INPUT - cant handle string input on positions
+- BUG_INPUT - cant handle string input on positions
