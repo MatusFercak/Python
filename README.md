@@ -1,4 +1,4 @@
-### 4FUN
+### Projekty
 <br/>
 
 - [Encryption](https://github.com/MatusFercak/Python/tree/main/Encryption)
