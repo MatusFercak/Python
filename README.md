@@ -10,8 +10,6 @@
 - [UpAndDown](https://github.com/MatusFercak/Python/tree/main/UpAndDown)
 
 <br/>
-<br/>
-<br/>
 
 #### Kontakt
 - mail: matusfercak@gmail.com
