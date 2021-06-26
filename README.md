@@ -4,11 +4,11 @@
 ### Projekty
 <br/>
 
-- [Sifrovanie](https://github.com/MatusFercak/Python/tree/main/Encryption)
-- [Pravdepodobnost vyhry v pokri](https://github.com/MatusFercak/Python/tree/main/Poker-chances)
-- [Posta](https://github.com/MatusFercak/Python/tree/main/Post)
+- [Encryption](https://github.com/MatusFercak/Python/tree/main/Encryption)
+- [Poker-chances](https://github.com/MatusFercak/Python/tree/main/Poker-chances)
+- [Post](https://github.com/MatusFercak/Python/tree/main/Post)
 - [Login](https://github.com/MatusFercak/Python/tree/main/Login)
-- [Testovanie](https://github.com/MatusFercak/Python/tree/main/Testovanie)
+- [Testing](https://github.com/MatusFercak/Python/tree/main/Testovanie)
 - [Tic-Tac-Toe](https://github.com/MatusFercak/Python/tree/main/Tic-Tac-Toe)
 
 <br/>
