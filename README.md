@@ -1,6 +1,3 @@
-## Tento repozitár slúži na prehľad mojich schopnosti su to projekty na ktorých pracujem vo voľnom čase 
-<br/>
-
 ### Projekty
 <br/>
 
@@ -10,9 +7,8 @@
 - [Login](https://github.com/MatusFercak/Python/tree/main/Login)
 - [Testing](https://github.com/MatusFercak/Python/tree/main/Testovanie)
 - [Tic-Tac-Toe](https://github.com/MatusFercak/Python/tree/main/Tic-Tac-Toe)
+- [UpAndDown](https://github.com/MatusFercak/Python/tree/main/UpAndDown)
 
-<br/>
-<br/>
 <br/>
 
 #### Kontakt
