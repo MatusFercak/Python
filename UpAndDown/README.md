@@ -1,1 +1,1 @@
-## Simulacia chodu vythaov v biznis centre
+## Simulacia chodu vyťahov v biznis centre
