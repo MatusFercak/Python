@@ -1,0 +1,24 @@
+{
+    "Packages": [
+        {
+            "address": "Bosice",
+            "weight": 20,
+            "number": 2341
+        },
+        {
+            "address": "Kosice",
+            "weight": 30,
+            "number": 2841
+        },
+        {
+            "address": "Zosice",
+            "weight": 10,
+            "number": 2443
+        },
+        {
+            "address": "Aosice",
+            "weight": 14,
+            "number": 2451
+        }
+    ]
+}

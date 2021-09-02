@@ -1,214 +1,198 @@
-class Zasielka:
+import json
 
-	def __init__(self, vaha, smerovacie_cislo, meno_odosielatela, meno_prijmatela, cislo_zasielky):
-		self.__vaha = vaha 
-		self.__smerovacie_cislo = smerovacie_cislo
-		self.__meno_odosielatela = meno_odosielatela
-		self.__meno_prijmatela = meno_prijmatela
-		self.__cislo_zasielky = cislo_zasielky
-		self.__stav = 'False'
 
-	def __del__(self):
-		del self
-	def get_vaha(self):
-		return self.__vaha
-	def set_vaha(self, arg):
-		self.__vaha = arg
+class Package:
+	def __init__(self, address, weight, number):
+		if type(address) not in [str] or len(address) <= 0:
+			raise ValueError('Invalid input! The Address must be a string with lenght more then 0.')
+		if type(weight) not in [int] or weight <= 0:
+			raise ValueError('Invalid input! The Weight must be a intiger and greater the 0.')
+		if type(number) not in [int] or len(str(number)) != 4:
+			raise ValueError('invalid input! The Number must be a intiger of 4 digits.')
 
-	def get_smerovacie_cislo(self):
-		return self.__smerovacie_cislo
-	def set_smerovacie_cislo(self, arg):
-		self.__smerovacie_cislo = arg
+		self.__address = address
+		self.__weight = weight
+		self.__number = number
 
-	def get_meno_odosielatela(self):
-		return self.__meno_odosielatela
-	def set_meno_odosielatela(self, arg):
-		self.__meno_odosielatela = arg
-
-	def get_meno_prijmatela(self):
-		return self.__meno_prijmatela
-	def set_meno_prijmatela(self, arg):
-		 self.__meno_prijmatela = arg
-	
-	def get_stav(self):
-		return self.__stav
-	def set_stav(self, arg):
-		self.__stav = arg
-
-	def get_cislo_zasielky(self):
-		return self.__cislo_zasielky
-	def set_cislo_zasielky(self, arg):
-		self.__cislo_zasielky = arg
 
 	def __str__(self):
-		inf = '-'*25 + '-\n'
-		inf += f'Vaha: {self.__vaha} kg\n'
-		inf += f'Smerovacie cislo: {self.__smerovacie_cislo}\n'
-		inf += f'Meno odosielatela: {self.__meno_odosielatela}\n'
-		inf += f'Meno prijmatela: {self.__meno_prijmatela}\n'+'Stav: '
-		inf += 'Prevziate\n' if self.__stav == 'True' else 'Neprevziate\n'
-		inf += f'Cislo zasielky: {self.__cislo_zasielky}\n'
-		inf += '-'*25 + '-\n'
-		return inf
+		st = f'{self.__number}:'
+		st += f'{self.__address}'
+		return st + f'({self.__weight})'
 
 
-class Posta(Zasielka):
-	zasielky = list()
-
-	def __init__(self, nazov, vaha, smerovacie_cislo, meno_odosielatela, meno_prijmatela, cislo_zasielky):
-		super().__init__(vaha, smerovacie_cislo, meno_odosielatela, meno_prijmatela, cislo_zasielky)
-		self.__pobocka_posty = nazov
+	def __eq__(self, other):
+		return self.__number == other.__number
 
 
-	def add_zasielku(self):
-		lst = list()
-		for i in Posta.zasielky:
-			 lst.append(i[-2])
-		if self.get_cislo_zasielky() in lst:
-			print('--'*20 +'\nCislo zasielky je uz pouzite\n' + '--'*20)
-			return -1
-		self.zasielky.append([
-			self.get_vaha(), 
-			self.get_smerovacie_cislo(), 
-			self.get_meno_odosielatela(),
-		 	self.get_meno_prijmatela(),
-		 	self.get_cislo_zasielky(),
-		 	self.get_stav()
-		 	])
+	def change_address(self, address):
+		self.__address = address
 
-	def del_zasielku(cislo):
-		index = None
-		for i in range(len(Posta.zasielky)):
-			if Posta.zasielky[i][-2] == str(cislo):
-				index = i
-				pass
-		if index != None:
-			Posta.zasielky.pop(index)
+
+	def get_number(self):
+		return self.__number
+
+
+	def get_weight(self):
+		return self.__weight
+
+
+	def get_address(self):
+		return self.__address
+
+
+class Post(Package):
+	packages = []
+
+	def __init__(self):
+		pass
+
+
+	def add_package(self, package):
+		list_of_numbers = [package.get_number() for package in self.packages]
+		if package.get_number() in list_of_numbers:
+			print(f'Invalid number of package: {package.get_number()} is allready in use.')
+			return
+		self.packages.append(package)
+
+
+	def remove_package(self, package):
+		list_of_numbers = [package.get_number() for package in self.packages]
+		if package.get_number() in list_of_numbers:
+			self.packages.remove(package)
 		else:
-			print('--'*20+'\nZasielka s danym cislom neexistuje\n'+'--'*20)
-			return -1
+			print(f'Invalid number of package: {package.get_number()} is not in use.')
 
-	def get_zasielky():
-		return Posta.zasielky
 
-	def set(self, arg, index):
-		lst = list()
-		for i in Posta.zasielky:
-			if i[-2] == self.get_cislo_zasielky():
-			 	i[index] = str(arg)
+	def change_address_by_number(self, number, address):
+		for package in self.packages:
+			if package.get_number() == number:
+				package.change_address(address)
+				return
+		print(f'Package with number: {number} do not exist.')
 
-	def set_Vaha(self, arg):
-		self.set_vaha(str(arg))
-		Posta.set(self, arg, 0)
+
+	def show_packages(self):
+		packages = list()
+		for package in self.packages:
+			packages.append(str(package))
+		return packages
+
+
+	def sort_by_weight(self):
+		packages = self.packages.copy()
+		for i in range(len(packages) - 1):
+			for j in range(0, len(packages) - i - 1):
+				if packages[j].get_weight() > packages[j + 1].get_weight():
+					packages[j],packages[j + 1] = packages[j + 1],packages[j]
+
+		sorted_packages = list()	
+		for package in packages:
+			sorted_packages.append(str(package))
+
+		return sorted_packages
+
+
+	def sort_by_address(self):
+		packages = self.packages.copy()
+		for i in range(len(packages) - 1):
+			for j in range(0, len(packages) - i - 1):
+				if packages[j].get_address() > packages[j + 1].get_address():
+					packages[j],packages[j + 1] = packages[j + 1],packages[j]
+
+		sorted_packages = list()
+		for package in packages:
+			sorted_packages.append(str(package))
+
+		return sorted_packages
+
+
+	def get_package_by_address(self, address):
+		packages_by_address = list()
+		for package in self.packages:
+			if package.get_address() == address:
+				packages_by_address.append(str(package))
+
+		return packages_by_address
+
+	def save_packages(self):
+		file = open('save.json','w')
+
+		data = {}
+		data['Packages'] = []
+		for package in self.packages:
+			data['Packages'].append({
+				'address': package.get_address(),
+				'weight': package.get_weight(),
+				'number': package.get_number()
+				}) 
+
+		file.write(json.dumps(data,indent = 4))
+		file.close()
+
+
+	def load_packages(self):
+		file = open('load.json','r')
+
+		data = json.load(file)
+		for package in data['Packages']:
+			self.add_package(Package(package['address'], package['weight'], package['number']))
+
+
+	def get_whole_weight(self):
+		weight = 0
+		for package in self.packages:
+			weight += package.get_weight()
+
+		return weight
+
+
+
+
+
+
+
+
+
+
+
+
+def main():
+	post_1 = Post()
+	# package_1 = Package('Bosice', 20, 2341)
+	# package_2 = Package('Kosice', 30, 2841)
+	# package_3 = Package('Zosice', 10, 2443)
+	# package_4 = Package('Aosice', 14, 2451)
+
+
+	# post_1.add_package(package_1)
+	# post_1.add_package(package_2)
+	# post_1.add_package(package_3)
+	# post_1.add_package(package_4)
+
+
+	# post_1.remove_package(package_2)
+	# post_1.remove_package(package_2)
+
 		
-	def set_Smerovacie_cislo(self, arg):
-		self.set_smerovacie_cislo(str(arg))
-		Posta.set(self, arg, 1)
-
-	def set_Meno_odosielatela(self, arg):
-		self.set_meno_odosielatela(arg)
-		Posta.set(self, arg, 2)
-
-	def set_Meno_prijmatela(self, arg):
-		self.set_meno_prijmatela(arg)
-		Posta.set(self, arg, 3)
-
-	def set_Cislo_Zasielky(self, arg):
-		self.set_cislo_zasielky(arg)
-		Posta.set(self, arg, 4)
-
-	def set_Stav_zasielky(self, arg):
-		self.set_stav(arg)
-		Posta.set(self, arg, 5)
-
-	def sort_vaha():
-		for i in range(len(Posta.zasielky)):
-			for i in range(len(Posta.zasielky)-1):
-				if int(Posta.zasielky[i][0]) > int(Posta.zasielky[i+1][0]):
-					Posta.zasielky[i][0], Posta.zasielky[i+1][0]= Posta.zasielky[i+1][0], Posta.zasielky[i][0]
-
-	def get_celkova_vaha():
-		vaha = 0
-		for i in Posta.zasielky:
-			vaha += int(i[0])
-		return vaha
-
-	def get_all_meno(meno):
-		lst = list()
-		for i in Posta.zasielky:
-			if i[-3] == meno:
-				lst.append(i)
-		print(lst)
-
-
-	def save_data(file_path):
-		open(file_path, 'w').close()
-		my_file = open(file_path, 'a')
-
-		for i in Posta.zasielky:
-			my_file.write(f'{i[0]},{i[1]},{i[2]},{i[3]},{i[4]},{i[5]}\n')
-		my_file.close()
-
-	def load_data(file_path):
-		load = 0
-		for i in open(file_path, 'r').readlines():
-			lst = i[:-1].split(',')
-			lst_of = list()
-			for obj in Posta.zasielky:
-				lst_of.append(obj[-2])
-				
-			if lst[-2] in lst_of:
-				print('Fail to loaded data.')
-			else:
-				print('Successfully loaded.')
-				Posta.zasielky.append(lst)
-				load += 1
-		print('Loaded',load,'/',len(open(file_path, 'r').readlines()))
-
+	# print(post_1.sort_by_weight())
+	# print(post_1.sort_by_address())
 	
 
-			 	
+	# package_1.change_address('Presov')
+	# post_1.change_address_by_number(2341, 'Blava')
+	# print(post_1.get_package_by_address('Blava'))
 
+
+	# print(package_1)
+	# print(package_1 == package_2) 
+
+
+	post_1.save_packages()
+	post_1.load_packages()
+	print(post_1.show_packages())
+	print(post_1.get_whole_weight())
+	pass
 
 if __name__ == '__main__':
-	zasielka_1 = Posta('KVP','20','04023','Matus Fercak','James Bond','1234')
-	zasielka_2 = Posta('KVP','25','04023','Matus Fercak','James Bond','1235')
-	zasielka_3 = Posta('KVP','15','04023','Matus Fercak','James Bond','3')
-
-	print(zasielka_1)
-
-	# #print(zasielka_1.__str__())
-	# zasielka_1.set_Vaha('15')
-	# #print(zasielka_1.__str__())
-	Posta.add_zasielku(zasielka_1)
-	Posta.add_zasielku(zasielka_2)
-	Posta.add_zasielku(zasielka_3)
-
-	#Posta.save_data('save.txt')
-	#Posta.load_data('load.txt')
-	Posta.load_data('load.txt')
-
-	#Posta.del_zasielku(1234)
-	#Posta.del_zasielku(3434)
-	Posta.get_all_meno('James Bond')
-	#Posta.save_data('save.txt')
-	
-	# print(zasielka_3.__str__())
-	print(zasielka_1.get_vaha())
-
-	# zasielka_1.set_Vaha('40')
-	# zasielka_2.set_Vaha('350')
-	
-	# print(zasielka_1.__str__())
-	# #Posta.add_zasielku(zasielka_1)
-	
-	# #print(Posta.get_zasielky())
-
-	Posta.sort_vaha()
-	print(Posta.get_celkova_vaha())
-
-	
-	print(Posta.get_zasielky())
-	pass
-	
-
+	main()

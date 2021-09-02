@@ -1,4 +1,0 @@
-20,04023,Matus Fercak,James Bond,1234,False
-25,04023,Matus Fercak,James Bond,1235,False
-15,04023,Matus Fercak,James Bond,3,False
-8989,04023,Matus Fercak,James Charles,2255,Fals
